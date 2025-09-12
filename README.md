@@ -11,5 +11,10 @@ imagem
 Instrução de uso: <br>
 <img width="733" height="189" alt="image" src="https://github.com/user-attachments/assets/d1a2d86a-b947-4bbb-ba0e-2eb9aefe4868" />
 
+que eu comprei
+
+<img width="340" height="195" alt="image" src="https://github.com/user-attachments/assets/73a85f37-e942-43ab-bbd1-50b6eac36470" />
+
+<img width="389" height="244" alt="image" src="https://github.com/user-attachments/assets/32f31a14-527b-4450-ab23-27a809d41d4d" />
 
 
