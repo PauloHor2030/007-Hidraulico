@@ -1,5 +1,15 @@
 # 007-Hidraulico
 Projeto Hidráulico + Válvula Solenóide 
+# Firebase<br>
+Programa de conversão: <br>
+a) Streaming em tempo real <br>
+   Firestore Change Stream-> Dataflow -> BigQuery<br>
+   gravação em tempo real no BigQuery (particionado por data)<br>
+   beneficios: baixa latência para BI, Zero manutenção de servidor, resiliente<br>
+   Gravaçao no bigQuery será feita pelo Cloud Run Job / Cloud Function, qualquer um dos 2 será orquestrado pelo Cloud Scheduler.<br>
+
+
+
 
 # imagem
 ===============================
