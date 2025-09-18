@@ -214,21 +214,27 @@ Gravaçao no bigQuery será feita pelo Cloud Run Job / Cloud Function, qualquer 
 Recomendo uma arquitetura 100% Google Cloud, análoga ao ThermoSafe:
 
 Ingestão
-Cloud Functions (HTTP) para receber os POSTs dos ESP32 (validação, idempotência, detecção de vazamento).
-(Opcional) MQTT → Cloud Run consumer se quiser broker e buffering.
+========
+- Cloud Functions (HTTP) para receber os POSTs dos ESP32 (validação, idempotência, detecção de vazamento).
+- (Opcional) MQTT → Cloud Run consumer se quiser broker e buffering.
 Banco operacional
-Firestore (coleções t_condominio, t_cliente, t_medidor, subcoleção t_leituras por mês).
-Regras fechando acesso direto; Admin SDK só no backend.
+=================
+- Firestore (coleções t_condominio, t_cliente, t_medidor, subcoleção t_leituras por mês).
+- Regras fechando acesso direto; Admin SDK só no backend.
 BI / Relatórios
-BigQuery (tabelas particionadas por dia, cluster por medidor_id).
-Pipeline Streaming (se quiser near real-time) ou Batch diário (mais econômico).
+===============
+- BigQuery (tabelas particionadas por dia, cluster por medidor_id).
+- Pipeline Streaming (se quiser near real-time) ou Batch diário (mais econômico).
 APIs e Painéis
-Cloud Run (container) para sua API FastAPI (cadastros, autenticação, dashboards “operacionais”).
-Streamlit ou Next.js/React para UI (pode subir em Cloud Run ou Firebase Hosting).
-Grafana/Looker Studio para BI diretamente no BigQuery (barato e rápido).
+==============
+- Cloud Run (container) para sua API FastAPI (cadastros, autenticação, dashboards “operacionais”).
+- Streamlit ou Next.js/React para UI (pode subir em Cloud Run ou Firebase Hosting).
+- Grafana/Looker Studio para BI diretamente no BigQuery (barato e rápido).
 Jobs/Rotinas
-Cloud Scheduler para tarefas (ETL diário, limpeza/TTL, recomputar agregados).
-Cloud Tasks/PubSub para filas de alertas.
+============
+- Cloud Scheduler para tarefas (ETL diário, limpeza/TTL, recomputar agregados).
+- Cloud Tasks/PubSub para filas de alertas.
 Alertas
-Na Function de ingestão, já marcar flag_vazamento e disparar WhatsApp/e-mail.
-Opcional: Cloud Monitoring para métricas (leituras/min, falhas, latências).
+=======
+- Na Function de ingestão, já marcar flag_vazamento e disparar WhatsApp/e-mail.
+- Opcional: Cloud Monitoring para métricas (leituras/min, falhas, latências).
