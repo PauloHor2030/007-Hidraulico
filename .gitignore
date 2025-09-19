@@ -1,4 +1,4 @@
-/.env
+﻿/.env
 /Sigiloso/
 /thermosafehidraulico-firebase-adminsdk-*.json
 
@@ -8,8 +8,6 @@ __pycache__/
 *.log
 .venv/
 venv/
-.envrc
 .idea/
 .vscode/
-*.sqlite3
 .DS_Store
