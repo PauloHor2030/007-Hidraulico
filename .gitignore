@@ -1,4 +1,15 @@
 /.env
 /Sigiloso/
 /thermosafehidraulico-firebase-adminsdk-*.json
-/.github/
+
+# Python / VSCode (boa prática)
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+venv/
+.envrc
+.idea/
+.vscode/
+*.sqlite3
+.DS_Store
