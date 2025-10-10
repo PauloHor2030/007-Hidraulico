@@ -1,0 +1,12 @@
+[Unit]
+Description=ThermoSafe Hidraulico Listener (FAST)
+After=network.target
+
+[Service]
+User=paulohor2030
+WorkingDirectory=/home/paulohor2030/ThermoSafeHidraulico
+ExecStart=/home/paulohor2030/ThermoSafeHidraulico/venv/bin/python /home/paulohor2030/ThermoSafeHidraulico/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
